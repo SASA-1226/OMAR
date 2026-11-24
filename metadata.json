@@ -1,0 +1,6 @@
+{
+  "name": "SASA STORE | OMOR — عُمْر",
+  "description": "كل جهاز له حكاية.. وكل حكاية لها سجل. منصة الهوية الرقمية للأجهزة وحفظ تاريخها وتوثيق الصيانة والضمانات وسوق الأجهزة الموثق.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,112 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
+    --font-display: 'Tajawal', 'IBM Plex Sans Arabic', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+
+    /* Unified SASA STORE | OMOR Light Palette */
+    --omor-canvas: #F6F7F9;
+    --omor-nav: #FFFFFF;
+    --omor-card: #FFFFFF;
+    --omor-elevated: #F1F3F6;
+    --omor-well: #EBEEF3;
+    --omor-hover: #E9ECF2;
+    --omor-border: #DCE0E7;
+    --omor-border-strong: #C8CFD9;
+    --omor-text-primary: #11161F;
+    --omor-text-secondary: #47505E;
+    --omor-text-muted: #687182;
+    --omor-gold: #D4AF37;
+    --omor-gold-hover: #E2C25B;
+    --omor-gold-text: #8F6D14;
+
+    color-scheme: light;
+  }
+
+  .dark {
+    /* Unified SASA STORE | OMOR Dark Palette (#0B1220 + #D4AF37 + Harmonious Graphite Grays) */
+    --omor-canvas: #0B1220;
+    --omor-nav: #10151F;
+    --omor-card: #141923;
+    --omor-elevated: #1B212E;
+    --omor-well: #0E131C;
+    --omor-hover: #1E2532;
+    --omor-border: #252C38;
+    --omor-border-strong: #333C4B;
+    --omor-text-primary: #F3F5F8;
+    --omor-text-secondary: #C9D0DC;
+    --omor-text-muted: #8F98A8;
+    --omor-gold: #D4AF37;
+    --omor-gold-hover: #E2C25B;
+    --omor-gold-text: #D4AF37;
+
+    color-scheme: dark;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    scrollbar-color: var(--omor-border-strong) var(--omor-canvas);
+  }
+
+  body {
+    background-color: var(--omor-canvas);
+    color: var(--omor-text-primary);
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  button, a, input, select, textarea {
+    transition-property: color, background-color, border-color, box-shadow, opacity;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid #D4AF37;
+    outline-offset: 2px;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--omor-text-muted);
+    opacity: 0.85;
+  }
+
+  .dark select option {
+    background-color: #141923;
+    color: #F3F5F8;
+  }
+
+  .font-mono-code {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+}
